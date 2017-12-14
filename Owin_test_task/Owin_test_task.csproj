@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{35E3C174-9575-413A-BB1F-325A6D2DA65C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Owin_test_task</RootNamespace>
+    <AssemblyName>Owin_test_task</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy">
+      <HintPath>..\packages\Nancy.1.4.4\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy.Owin">
+      <HintPath>..\packages\Nancy.Owin.1.4.1\lib\net40\Nancy.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Packages\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Front\EmployeersForm.js" />
+    <Content Include="App_Front\EmployeersList.js" />
+    <Content Include="App_Front\MainTemplate.js" />
+    <Content Include="FirstPage.html" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\config.rb" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\demo-files\demo.css" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\demo-files\demo.js" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\demo.html" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\fonts\ext-watermark.svg" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\Read Me.txt" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\style.css" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-ext\fonts\ExtJS.svg" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-arrow-open-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-arrow-open.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-scroll-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-scroll-right.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-split-arrow-open-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-split-arrow-open.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-split-arrow-over-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-split-arrow-over.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-split-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\breadcrumb\default-split-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn-group\btn-group-default-framed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn-group\btn-group-default-framed-notitle-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn-group\btn-group-default-framed-notitle-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn-group\btn-group-default-framed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-disabled-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-disabled-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-focus-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-focus-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-large-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-disabled-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-disabled-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-focus-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-focus-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-medium-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-disabled-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-disabled-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-focus-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-focus-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-small-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-disabled-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-disabled-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-focus-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-focus-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-large-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-disabled-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-disabled-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-focus-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-focus-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-medium-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-disabled-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-disabled-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-focus-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-focus-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-default-toolbar-small-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-large-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-large-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-large-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-large-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-large-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-large-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-large-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-large-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-medium-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-medium-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-medium-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-medium-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-medium-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-medium-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-medium-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-medium-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-small-focus-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-small-focus-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-small-focus-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-small-focus-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-small-over-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-small-over-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-small-pressed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\btn\btn-plain-toolbar-small-pressed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-large-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-large-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-large-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-large-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-large-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-large-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-medium-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-medium-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-medium-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-medium-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-medium-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-medium-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-small-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-small-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-small-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-small-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-small-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-small-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-large-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-large-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-large-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-large-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-large-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-large-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-medium-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-medium-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-medium-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-medium-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-medium-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-medium-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-small-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-small-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-small-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-small-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-small-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\default-toolbar-small-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\grid-cell-small-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\grid-cell-small-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\grid-cell-small-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\grid-cell-small-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\grid-cell-small-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-large-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-large-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-large-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-large-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-large-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-large-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-medium-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-medium-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-medium-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-medium-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-medium-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-medium-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-small-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-small-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-small-s-arrow-b-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-small-s-arrow-b.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-small-s-arrow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\button\plain-toolbar-small-s-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\datepicker\arrow-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\datepicker\arrow-right.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\datepicker\month-arrow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\dd\drop-add.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\dd\drop-no.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\dd\drop-yes.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\editor\tb-sprite.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\fieldset\collapse-tool.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\checkbox.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\clear-trigger-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\clear-trigger.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\date-trigger-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\date-trigger.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\exclamation.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\radio.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\search-trigger-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\search-trigger.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\spinner-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\spinner.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\tag-field-item-close.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\trigger-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\form\trigger.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid-row-editor-buttons\grid-row-editor-buttons-default-bottom-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid-row-editor-buttons\grid-row-editor-buttons-default-bottom-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid-row-editor-buttons\grid-row-editor-buttons-default-top-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid-row-editor-buttons\grid-row-editor-buttons-default-top-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\col-move-bottom.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\col-move-top.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\columns.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\dd-insert-arrow-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\dd-insert-arrow-right.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\dirty-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\dirty.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\drop-no.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\drop-yes.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\filters\equals.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\filters\find.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\filters\greater_than.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\filters\less_than.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\group-by.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\group-collapse.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\group-expand.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\hd-pop.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\hmenu-asc.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\hmenu-desc.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\hmenu-lock.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\hmenu-unlock.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\loading.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\page-first.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\page-last.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\page-next.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\page-prev.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\pick-button.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\refresh.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\sort_asc.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\grid\sort_desc.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\loadmask\loading.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\magnify.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-checked.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-group-checked.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menu-parent-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menu-parent.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menubar-checked.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menubar-group-checked.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menubar-menu-parent-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menubar-menu-parent.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menubar-scroll-bottom.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menubar-scroll-top.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-menubar-unchecked.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-scroll-bottom.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-scroll-top.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\menu\default-unchecked.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-bottom-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-bottom-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-bottom-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-bottom-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-left-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-left-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-left-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-right-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-right-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-right-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-top-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-collapsed-top-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-left-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-left-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-left-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-right-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-right-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-right-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-top-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-default-framed-top-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-bottom-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-bottom-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-bottom-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-bottom-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-left-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-left-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-left-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-right-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-right-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-right-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-top-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-collapsed-top-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-left-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-left-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-left-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-right-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-right-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-right-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-top-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel-header\panel-header-light-framed-top-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel\panel-default-framed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel\panel-default-framed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel\panel-light-framed-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\panel\panel-light-framed-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\shared\icon-error.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\shared\icon-info.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\shared\icon-question.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\shared\icon-warning.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\sizer\e-handle.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\sizer\ne-handle.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\sizer\nw-handle.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\sizer\s-handle.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\sizer\se-handle.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\sizer\sw-handle.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\slider\slider-bg.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\slider\slider-thumb.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\slider\slider-v-bg.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\slider\slider-v-thumb.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-more-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-more.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-plain-more-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-plain-more.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-plain-scroll-bottom.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-plain-scroll-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-plain-scroll-right.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-plain-scroll-top.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-scroll-bottom.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-scroll-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-scroll-right.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab-bar\default-scroll-top.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-bottom-active-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-bottom-focus-active-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-bottom-focus-over-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-bottom-over-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-close.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-left-active-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-left-focus-active-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-left-focus-over-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-left-over-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-right-active-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-right-focus-active-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-right-focus-over-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-right-over-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-top-active-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-top-focus-active-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-top-focus-over-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tab\tab-default-top-over-fbg.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tip\tip-default-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tip\tip-default-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tip\tip-form-invalid-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tip\tip-form-invalid-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\default-more-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\default-more.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\default-scroll-bottom.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\default-scroll-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\default-scroll-right.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\default-scroll-top.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\footer-more-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\footer-more.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\footer-scroll-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\toolbar\footer-scroll-right.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tools\tool-sprites-dark.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tools\tool-sprites.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\arrows-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\arrows.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-above.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-add.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-add.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-append.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-below.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-between.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-between.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-no.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-no.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-over.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-over.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-under.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-under.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-yes.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\drop-yes.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-end-minus-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-end-minus.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-end-plus-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-end-plus.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-end-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-end.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-line-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-line.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-minus-nl-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-minus-nl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-minus-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-minus.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-plus-nl-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-plus-nl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-plus-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-plus.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\elbow.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\folder-open-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\folder-open.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\folder-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\folder.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\leaf-rtl.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\leaf.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\tree\loading.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\util\splitter\mini-bottom.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\util\splitter\mini-left.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\util\splitter\mini-right.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\util\splitter\mini-top.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-bottom-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-bottom-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-bottom-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-bottom-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-left-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-left-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-left-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-right-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-right-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-right-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-top-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-collapsed-top-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-left-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-left-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-left-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-right-corners-rtl.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-right-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-right-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-top-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window-header\window-header-default-top-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window\toast\fade-blue.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window\toast\fader.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window\toast\icon16_error.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window\toast\icon16_info.png" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window\window-default-corners.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\images\window\window-default-sides.gif" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\theme-triton-all.css" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\theme-triton-all_1.css" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\theme-triton-all_2.css" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\theme-triton-all-debug.scss" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\theme-triton-all-rtl-debug.scss" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\theme-triton-debug.js" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\theme-triton.js" />
+    <Content Include="Libs\ExtJs\ext-all.js" />
+    <Content Include="Libs\ExtJs\ext.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SecondPage.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Firm.cs" />
+    <Compile Include="App_Code\Department.cs" />
+    <Compile Include="App_Code\HomeModule.cs" />
+    <Compile Include="App_Code\DbModel.cs" />
+    <Compile Include="App_Code\Person.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Code\Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\fonts\ext-watermark.eot" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\fonts\ext-watermark.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\fonts\ext-watermark.woff" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\ext\ext-watermark\selection.json" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-ext\fonts\ExtJS.eot" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-ext\fonts\ExtJS.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\font-ext\fonts\ExtJS.woff" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-Bold.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-BoldItalic.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-ExtraBold.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-Italic.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-Light.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-LightItalic.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-Regular.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-Semibold.ttf" />
+    <Content Include="Libs\ExtJs\classic\theme-triton\resources\fonts\OpenSans-SemiboldItalic.ttf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:35188/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
